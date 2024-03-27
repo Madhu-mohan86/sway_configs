@@ -3,9 +3,11 @@
 # Use Mod1 for Alt.
 set $mod Mod1
 
-#super_key declaration
+#super_key declaration (windows key)
 set $super Mod4
 
+#control_key declaration
+set $ctrl Control
 # Home row direction keys, like vim
 set $left h
 set $down j 
@@ -87,10 +89,10 @@ exec swayidle -w \
 # Moving around:
 #
     # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
+    #bindsym $mod+$left focus left
+    #bindsym $mod+$down focus down
+    #bindsym $mod+$up focus up
+    #bindsym $mod+$right focus right
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -137,6 +139,16 @@ exec swayidle -w \
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
+
+
+#volumekeybindings:
+
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+
+
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
@@ -200,12 +212,13 @@ bindsym $mod+r mode "resize"
 
 default_border pixel 2
 default_floating_border pixel 2
+
 corner_radius 4
 blur enable 
 blur_xray enable
 blur_passes 3
 blur_radius 5
-layer_effects "waybar" shadows enable; blur enable;
+layer_effects "waybar" shadows disable; blur enable;
 shadows enable
 default_dim_inactive 0.2
 
