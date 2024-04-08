@@ -11,9 +11,8 @@
 #waybar {
 	background: linear-gradient(#222831,#222831)padding-box,radial-gradient(#e7c1cc,#fe9000,#fff020,#3edf4b,#3363ff,#b102b7,#fd004c)border-box;
         border-radius: 6px;
-	background-size: 200% 200%;
-	border: 2.5px solid transparent;
-        animation: gradient 15s ease infinite;       
+	background-size: 400% 400%;
+	border: 2.8px solid transparent;       
 }
 
 #workspaces {
@@ -51,6 +50,7 @@
 #network,
 #clock,
 #tray,
+#temperature,
 #pulseaudio {
   margin: 8px;
   padding-right: 16px;
